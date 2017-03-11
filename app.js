@@ -1,5 +1,4 @@
 angular.module('flapperNews', ['ui.router'])
-//angular.module('flapperNews', [])
 
 .config([
 	'$stateProvider',
