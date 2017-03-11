@@ -3,8 +3,8 @@ angular.module('flapperNews', ['ui.router'])
 
 .config([
 	'$stateProvider',
-	'$urlRouteProvider',
-	function($stateProvider,$urlRouteProvider){
+	'$urlRouterProvider',
+	function($stateProvider,$urlRouterProvider){
 
 		$stateProvider
 		 .state('home', {
@@ -13,7 +13,7 @@ angular.module('flapperNews', ['ui.router'])
 			controller: 'MainCtrl'
 		});
 
-		$urlRouteProvider.otherwise('home');
+		$urlRouterProvider.otherwise('home');
 }])
 	
 
