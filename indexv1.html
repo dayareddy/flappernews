@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>My Angular App!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="flapperNews" ng-controller="MainCtrl">
+    <!--<b>Simple string</b>
+    <div >
+      {{test}}
+    </div>
+    <b>Array of Strings</b>
+     <div ng-repeat="arrpost in arrposts">
+      {{arrpost}}
+    </div>
+    <b>Array of Objects</b>
+     <div ng-repeat="objpost in objposts">
+      {{objpost}}
+    </div>
+    <b>Array of Objects formatted with attributes</b>-->
+     <div ng-repeat="objpost in objposts | orderBy : '-upvotes'">
+      <span ng-click="incrementUpVotes(objpost)"><img src="thumbsup.png" height="10" width="10"></span>
+      <a href="{{objpost.link}}" ng-show="objpost.link">
+        {{objpost.title}}
+      </a>
+      <span ng-hide="objpost.link">
+        {{objpost.title}}
+      </span>
+       - upvotes: {{objpost.upvotes}}
+    </div>
+    <!--<button ng-click="addCannedPost()">Add a canned Post</button>-->
+    <form ng-submit= "addPost()">
+      <input type="text" placeholder="Title" ng-model="title">
+      <input type="text" placeholder="Link" ng-model="link">
+      <button type="submit">Post</button>
+    </form>
+  </body>
+</html>
